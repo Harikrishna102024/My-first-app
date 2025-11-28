@@ -1,8 +1,22 @@
-<div class="header">
+<div class="header {{context.theme}}">
     <div class="main-title col-5">
         <h2>Languages Tutorial</h2>
     </div>
-    <div class="doc-title col-7">
+    <div class="doc-title col-6">
         <h3>{{selectedTitle}}</h3>
+    </div>
+    <div class="theme-switch">
+        <label class="base-lable">
+            <input class="toggle-checkbox" type="checkbox" (click)="toggleTheme($event)">
+            <div class="toggle-slot">
+                <div class="sun-icon-wrapper">
+                    <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+                </div>
+                <div class="toggle-button"></div>
+                <div class="moon-icon-wrapper">
+                    <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+                </div>
+            </div>
+        </label>
     </div>
 </div>
