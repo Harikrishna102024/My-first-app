@@ -5,12 +5,8 @@ export const SIDE_NAV = [
     open: false,
     children: [
       {
-        name: 'About', 
-        path: 'ts/about-ts',
-      },
-      {
         name: 'Introduction', 
-        path: 'ts/about-ts',
+        path: 'ts/intro',
       },
       {
         name: 'Types', 

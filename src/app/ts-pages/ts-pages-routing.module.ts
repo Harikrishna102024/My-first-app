@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './about/about.component';
+import { IntroComponent } from './intro/intro.component';
 
 const routes: Routes = [
   {
-    path: 'about-ts', 
-    component: AboutComponent
+    path: 'intro', 
+    component: IntroComponent
   }
 ];
 

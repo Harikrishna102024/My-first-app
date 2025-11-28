@@ -8,26 +8,29 @@
 
         <ng-container *ngFor="let sub of item.children">
 
-          <li class="child-area" *ngIf="!sub.children" [routerLink]="sub.path" (click)="$event.stopPropagation()" (click)="passName(sub.name)">
+          <li class="child-area"
+              *ngIf="!sub.children"
+              [routerLink]="sub.path"
+              (click)="$event.stopPropagation(); passName(sub.name)"
+              [ngClass]="{ 'active': seletedName === sub.name }">
             {{ sub.name }}
           </li>
 
           <li class="child-area" *ngIf="sub.children" (click)="toggleMenu(sub);" (click)="$event.stopPropagation()">
             {{ sub.name }}
             <ul *ngIf="sub.open" class="submenu sub-submenu">
-              <li *ngFor="let child of sub.children" [routerLink]="child.path" (click)="$event.stopPropagation()" (click)="passName(child.name)">
+              <li *ngFor="let child of sub.children"
+                  [routerLink]="child.path"
+                  (click)="$event.stopPropagation(); passName(child.name)"
+                  [ngClass]="{ 'active': seletedName === child.name }">
                 {{ child.name }}
               </li>
             </ul>
-          </li> 
+          </li>
 
         </ng-container>
-
       </ul>
-
     </li>
 
   </ul>
-
 </div>
-

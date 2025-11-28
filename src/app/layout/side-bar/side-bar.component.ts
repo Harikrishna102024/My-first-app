@@ -12,6 +12,8 @@ export class SideBarComponent {
 
   @Output() sendData = new EventEmitter<string>();
 
+  seletedName: any;
+
   constructor(){}
 
   toggleMenu(item: any) {
@@ -19,6 +21,7 @@ export class SideBarComponent {
   }
 
   passName(data: any) {
+    this.seletedName = data;
     this.sendData.emit(data)
   }
 

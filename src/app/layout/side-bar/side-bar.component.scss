@@ -3,7 +3,7 @@
   width: 230px;
   background: #495057;
   color: white;
-  padding: 0;  
+  padding: 0;
   display: flex;
   flex-direction: column;
 
@@ -27,7 +27,7 @@
 .sidebar ul {
   list-style: none;
   margin: 0;
-  padding: 3px; 
+  padding: 3px;
   white-space: normal;
   word-break: break-word;
 }
@@ -35,7 +35,9 @@
 .sidebar li {
   padding: 10px 0;
   cursor: pointer;
-  list-style: none;
-  white-space: normal;
-  word-break: break-word;
+}
+.active {
+  background: #4d8881;
+  color: white;
+  font-weight: 600;
 }
