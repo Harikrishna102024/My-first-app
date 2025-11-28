@@ -1,13 +1,13 @@
 <div class="layout-wrapper">
 
   <!-- HEADER -->
-  <app-header></app-header>
+  <app-header [selectedTitle] = 'selectedTitle'></app-header>
 
   <!-- BODY PART -->
   <div class="body-wrapper">
 
     <!-- SIDEBAR -->
-    <app-side-bar></app-side-bar>
+    <app-side-bar (sendData)="getName($event)"></app-side-bar>
 
     <!-- MAIN CONTENT -->
     <div class="main-content">

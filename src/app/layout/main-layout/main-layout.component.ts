@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class MainLayoutComponent {
 
+  selectedTitle: any;
+
+  constructor(){}
+
+  getName(value: any) {
+   this.selectedTitle = value
+  }
 }
