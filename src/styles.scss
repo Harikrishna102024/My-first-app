@@ -1,3 +1,24 @@
+/* Scrollbar width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+    background: #3f444a;
+}
+
+/* Scrollbar Thumb (the bar) */
+::-webkit-scrollbar-thumb {
+    background: #868e96;
+    border-radius: 8px;
+}
+
+/* Hover color */
+::-webkit-scrollbar-thumb:hover {
+    background: #adb5bd;
+}
+
 .page-wrapper {
     height: 100%;
 }

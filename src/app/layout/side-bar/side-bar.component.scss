@@ -1,7 +1,7 @@
 .sidebar {
   height: 100%;
   width: 230px;
-  background: #2c2c2c;
+  background: #495057;
   color: white;
   padding: 0;  
   display: flex;
@@ -9,11 +9,14 @@
 
   .list-heading {
     font-size: 23px;
+    border-bottom: 1px solid #6c757d;
     .submenu {
       font-size: 20px;
       padding-left: 20px;
       max-height: 100vh;
       overflow-y: auto;
+
+      
       .sub-submenu {
         padding-left: 24px;
       }
