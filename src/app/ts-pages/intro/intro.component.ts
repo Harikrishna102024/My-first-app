@@ -1,22 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TscriptService } from '../../services/tscript.service';
 
 @Component({
   selector: 'app-intro',
   templateUrl: './intro.component.html',
   styleUrl: './intro.component.scss'
 })
-export class IntroComponent {
+export class IntroComponent implements OnInit {
 
-  notesList = [
-    {
-      q: "What is TypeScript?",
-      a: "TypeScript is a superset of JavaScript that adds static typing and improves developer productivity.",
-      example: `let age: number = 25;`
-    },
-    {
-      q: "Why do we use TypeScript?",
-      a: "It catches errors early, improves maintainability, and gives better coding experience.",
-      example: `function add(a: number, b: number) { return a + b; }`
+  tsIntroNotes: any;
+
+  constructor(public tsNotes: TscriptService){}
+
+  ngOnInit() {
+    this.getTsNotes();
+  }
+
+  getTsNotes() {
+    if(this.tsNotes.notesList['tsIntro']) {
+      this.tsIntroNotes = this.tsNotes.notesList['tsIntro']
     }
-  ];
+  }
+
+
 }

@@ -13,17 +13,18 @@
               [routerLink]="sub.path"
               (click)="$event.stopPropagation(); passName(sub.name)"
               [ngClass]="{ 'active': seletedName === sub.name }">
-            {{ sub.name }}
+              <span class="first-child-area">{{ sub.name }}</span>
           </li>
 
-          <li class="child-area" *ngIf="sub.children" (click)="toggleMenu(sub);" (click)="$event.stopPropagation()">
+          <li class="child-submenu" *ngIf="sub.children" (click)="toggleMenu(sub);" (click)="$event.stopPropagation()">
             {{ sub.name }}
-            <ul *ngIf="sub.open" class="submenu sub-submenu">
-              <li *ngFor="let child of sub.children"
+            <ul *ngIf="sub.open" class="children-area">
+              <li class="children-area-list"
+                  *ngFor="let child of sub.children"
                   [routerLink]="child.path"
                   (click)="$event.stopPropagation(); passName(child.name)"
                   [ngClass]="{ 'active': seletedName === child.name }">
-                {{ child.name }}
+                  <span class="second-child-area">{{ child.name }}</span>
               </li>
             </ul>
           </li>

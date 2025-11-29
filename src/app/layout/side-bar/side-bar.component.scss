@@ -1,6 +1,6 @@
 .sidebar {
   height: 100%;
-  width: 230px;
+  width: 250px;
   background: #495057;
   color: white;
   padding: 0;
@@ -10,16 +10,34 @@
   .list-heading {
     font-size: 23px;
     border-bottom: 1px solid #6c757d;
+
     .submenu {
       font-size: 20px;
-      padding-left: 20px;
       max-height: 100vh;
       overflow-y: auto;
 
-      
-      .sub-submenu {
-        padding-left: 24px;
+      .child-area {
+        .first-child-area {
+          padding-left: 14px;
+          display: block;
+        }
       }
+
+      .child-submenu {
+        padding-left: 14px;
+        .children-area {
+          .children-area-list {
+            .second-child-area {
+              padding-left: 30px;
+            }
+          }
+        }
+      }
+    }
+
+
+    .sub-submenu {
+      padding-left: 24px;
     }
   }
 }
@@ -27,7 +45,7 @@
 .sidebar ul {
   list-style: none;
   margin: 0;
-  padding: 3px;
+  padding: 1px;
   white-space: normal;
   word-break: break-word;
 }
@@ -36,6 +54,7 @@
   padding: 10px 0;
   cursor: pointer;
 }
+
 .active {
   background: #4d8881;
   color: white;

@@ -29,15 +29,18 @@
 .left-part {
   width: 50%;
   padding: 18px 20px;
-  background: #f5f7ff;    /* ✔ very soft blue */
+  background: #f5f7ff;   
   border-right: 1px solid #e0e4f2;
+  .answer {
+    display: flex;
+  }
 }
 
 /* RIGHT PART */
 .right-part {
   width: 50%;
   padding: 18px 20px;
-  background: #faf8ff;    /* ✔ very soft violet */
+  background: #faf8ff;   
 }
 
 /* Question Title */
@@ -56,13 +59,6 @@ h4 {
   color: #6236c8;
 }
 
-/* Answer */
-p {
-  font-size: 15px;
-  color: #333;
-  line-height: 1.6;
-}
-
 
 /* EXAMPLE / CODE BLOCK */
 pre {
@@ -75,4 +71,12 @@ pre {
   word-break: break-word;
   line-height: 1.5;
   color: #2d2f36;
+}
+
+.heading-line {
+  font-weight: 700;
+  font-size: 17px;
+  color: #161616; 
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
