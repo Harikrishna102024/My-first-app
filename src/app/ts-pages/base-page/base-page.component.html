@@ -3,35 +3,13 @@
   <div class="ts-card" *ngFor="let item of prepareNotes; let i = index">
 
     <div class="left-part">
-
       <h3>{{ i + 1 }}. {{ item.q }}</h3>
-
-      <ng-container *ngFor="let point of item.a.split('.')">
-
-        <ng-container *ngIf="point.trim()">
-
-          <!-- Check if it's a Heading (ends with :-) -->
-          <div *ngIf="point.trim().endsWith(':-'); else normalLine" class="heading-line">
-            {{ point }}
-          </div>
-
-          <!-- Normal bullet line -->
-          <ng-template #normalLine>
-            <div class="answer">
-              <span>-</span>
-              <h6 style="padding-left: 8px;">{{ point }}</h6>
-            </div>
-          </ng-template>
-
-        </ng-container>
-
-      </ng-container>
-
+      <div [innerHTML]="item.processedAnswer"></div>
     </div>
 
     <div class="right-part">
-      <h4>Example</h4>
-      <pre>{{ item.ex }}</pre>
+      <h4>Examples</h4>
+      <div [innerHTML]="item.processedExample"></div>
     </div>
 
   </div>
