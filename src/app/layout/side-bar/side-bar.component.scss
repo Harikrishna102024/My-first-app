@@ -41,6 +41,11 @@
     }
   }
 }
+.submenu .child-area:hover,
+.children-area .children-area-list:hover {
+  background-color: #68a59e;
+}
+
 
 .sidebar ul {
   list-style: none;

@@ -75,9 +75,10 @@ export class BasePageComponent implements OnInit {
       if (match) {
         const heading = match[1].trim();
         html += `
-        <div class="heading-line" style="font-family: cursive; color:black;font-size: 19px;"><b>${heading}</b></div>`;
+        <div class="heading-line" style="font-family: cursive; color:black;font-size: 19px;"><b>${heading}</b></div>
+        <pre style="font-size: 19px; font-family: cursive; padding-left: 50px;" >${text}</pre>`;
       } else {
-        html += `<pre style="font-size: 19px">${text}</pre>`
+        html += `<pre style="font-size: 19px; padding-left: 50px; font-family: cursive;">${text}</pre>`
       }
     } else {
       html += `<pre style="font-family: cursive; font-size: 19px; color:black;">No need example</pre>`
