@@ -51,12 +51,12 @@ export class BasePageComponent implements OnInit {
 
       if (match) {
         const heading = match[1].trim();
-        html += `<div class="heading-line" style="font-family: cursive; color: 'black';"><b>${heading}</b></div>`;
+        html += `<div class="heading-line" style="font-family: cursive; color: black;font-size: 19px;"><b>${heading}</b></div>`;
       } else {
         html += `
         <div class="answer" style="display:flex; padding-left:13px;">
           <span>-</span>
-          <span style ="padding-left:4px; font-family: cursive; color: 'black';">${line}.</span>
+          <span style ="padding-left:4px; font-family: cursive; color: black; font-size: 19px">${line}.</span>
         </div>
       `;
       }
@@ -67,20 +67,22 @@ export class BasePageComponent implements OnInit {
 
 
   formatExample(text: string) {
-    const match = text.match(/<([^>]+)>/);
 
-    if (match) {
-      const heading = match[1].trim();
-      const html = `
-      <div class="heading-line" style="font-family: cursive; color:black;"><b>${heading}</b></div>
-      <pre>${text}</pre>
-    `;
+    let html = '';
+    if (text) {
+      const match = text.match(/<([^>]+)>/);
 
-      return this.sanitizer.bypassSecurityTrustHtml(html);
+      if (match) {
+        const heading = match[1].trim();
+        html += `
+        <div class="heading-line" style="font-family: cursive; color:black;font-size: 19px;"><b>${heading}</b></div>`;
+      } else {
+        html += `<pre style="font-size: 19px">${text}</pre>`
+      }
     } else {
-      return this.sanitizer.bypassSecurityTrustHtml(`<pre>${text}</pre>`);
-
+      html += `<pre style="font-family: cursive; font-size: 19px; color:black;">No need example</pre>`
     }
+    return this.sanitizer.bypassSecurityTrustHtml(html);
 
   }
 
