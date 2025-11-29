@@ -8,7 +8,7 @@ import { TscriptService } from '../../services/tscript.service';
 })
 export class IntroComponent implements OnInit {
 
-  tsIntroNotes: any;
+  introNotes: any;
 
   constructor(public tsNotes: TscriptService){}
 
@@ -17,8 +17,9 @@ export class IntroComponent implements OnInit {
   }
 
   getTsNotes() {
-    if(this.tsNotes.notesList['tsIntro']) {
-      this.tsIntroNotes = this.tsNotes.notesList['tsIntro']
+    const intoData = this.tsNotes.notesList['tsIntro'];
+    if(intoData && intoData.length > 0) {
+      this.introNotes = intoData;
     }
   }
 

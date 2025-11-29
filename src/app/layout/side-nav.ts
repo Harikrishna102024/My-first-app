@@ -10,7 +10,7 @@ export const SIDE_NAV = [
       },
       {
         name: 'Types', 
-        path: 'ts/about-ts',
+        path: 'ts/types',
       },
       {
         name: 'var,let,const', 

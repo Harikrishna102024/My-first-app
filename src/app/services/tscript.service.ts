@@ -41,9 +41,16 @@ export class TscriptService {
   ],
   tsTypes: [
     {
-      q: '',
-      a: '',
-      ex: 'Example…'
+      q: 'What is Data type ?',
+      a: `Data type means, It is used to define the type of a variable is called Data Type.There are differenet types of data types. 
+      Primitive:-.
+      number.string.boolean.null.undefind.bigint.
+      Non-Primitive:-.
+      Array.tuple.function.object.
+      Special:-.
+      any.unknown.void.unin.enum.
+      number:-.number is primitive datatype used to store the any kind of numaric values`,
+      ex: `number:- var age: number = 24;`
     }
   ]
 };
