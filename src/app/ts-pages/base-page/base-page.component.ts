@@ -39,52 +39,64 @@ export class BasePageComponent implements OnInit {
 
 
   formatAnswer(text: string) {
-    const lines = text
-      .split('.')
-      .map(l => l.trim())
-      .filter(l => l);
 
     let html = '';
 
-    lines.forEach(line => {
-      const match = line.match(/<([^>]+)>/);
+    if (text) {
+      const lines = text
+        .split('.')
+        .map(l => l.trim())
+        .filter(l => l);
 
-      if (match) {
-        const heading = match[1].trim();
-        html += `<div class="heading-line" style="font-family: cursive; color: black;font-size: 19px;"><b>${heading}</b></div>`;
-      } else {
-        html += `
-        <div class="answer" style="display:flex; padding-left:13px;">
-          <span>-</span>
-          <span style ="padding-left:4px; font-family: cursive; color: black; font-size: 19px">${line}.</span>
-        </div>
-      `;
-      }
-    });
-
+      lines.forEach(line => {
+        const match = line.match(/<([^>]+)>/);
+        if (match) {
+          const heading = match[1].trim();
+          html += `<div class="heading-line" style=" color: black;font-size: 19px;"><b>${heading}</b></div>`;
+        } else {
+          html += `
+          <div class="answer" style="display:flex; padding-left:13px;">
+            <span>-</span>
+            <span style ="padding-left:4px;  color: black; font-size: 19px">${line}.</span>
+          </div>`;
+        }
+      });
+    } else {
+      html += `
+      <div class="answer" style="display:flex; padding-left:13px;">
+        <span style ="padding-left:4px;  color: black; font-size: 19px">Answer not Available</span>
+      </div>`;
+    }
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
 
 
   formatExample(text: string) {
 
-    let html = '';
-    if (text) {
-      const match = text.match(/<([^>]+)>/);
+    let html = "";
 
-      if (match) {
-        const heading = match[1].trim();
-        html += `
-        <div class="heading-line" style="font-family: cursive; color:black;font-size: 19px;"><b>${heading}</b></div>
-        <pre style="font-size: 19px; font-family: cursive; padding-left: 50px;" >${text}</pre>`;
-      } else {
-        html += `<pre style="font-size: 19px; padding-left: 50px; font-family: cursive;">${text}</pre>`
-      }
+    if (text) {
+      const lines = text
+        .split('~')
+        .filter(l => l);
+
+      lines.forEach(line => {
+        const match = line.match(/<([^>]+)>/);
+        if (match) {
+          const heading = match[1].trim();
+          html += `
+            <div class="heading-line" style=" color:black; font-size: 19px;"><b>${heading}</b></div>
+            <pre style="font-size: 19px;  padding-left: 50px;">${line}</pre>`;
+        } else {
+          html += `
+          <pre style="font-size: 19px;  padding-left: 50px;">${line}</pre>`;
+        }
+      });
     } else {
-      html += `<pre style="font-family: cursive; font-size: 19px; color:black;">No need example</pre>`
+      html += `<pre style=" font-size: 19px;">No need example</pre>`
     }
     return this.sanitizer.bypassSecurityTrustHtml(html);
-
   }
+
 
 }
